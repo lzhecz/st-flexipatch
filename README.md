@@ -1,4 +1,4 @@
-Similar to [dwm-flexipatch](https://github.com/bakkeby/dwm-flexipatch) this st 0.9 (95f22c5, 2024-03-04) project has a different take on st patching. It uses preprocessor directives to decide whether or not to include a patch during build time. Essentially this means that this build, for better or worse, contains both the patched _and_ the original code. The aim being that you can select which patches to include and the build will contain that code and nothing more.
+Similar to [dwm-flexipatch](https://github.com/bakkeby/dwm-flexipatch) this st 0.9.2 (5dbcca4, 2024-05-01) project has a different take on st patching. It uses preprocessor directives to decide whether or not to include a patch during build time. Essentially this means that this build, for better or worse, contains both the patched _and_ the original code. The aim being that you can select which patches to include and the build will contain that code and nothing more.
 
 For example to include the `alpha` patch then you would only need to flip this setting from 0 to 1 in [patches.h](https://github.com/bakkeby/st-flexipatch/blob/master/patches.def.h):
 ```c
@@ -14,6 +14,8 @@ Refer to [https://st.suckless.org/](https://st.suckless.org/) for details on the
 ---
 
 ### Changelog:
+
+2024-05-31 - Added the anygeometry patch
 
 2024-03-13 - Added the reflow patch and upgraded the netwmicon patch
 
@@ -101,6 +103,10 @@ Refer to [https://st.suckless.org/](https://st.suckless.org/) for details on the
    - [alpha-focus-highlight](https://st.suckless.org/patches/alpha_focus_highlight/)
       - allows the user to specify two distinct opacity values or background colors in order to
         easily differentiate between focused and unfocused terminal windows
+
+   - [anygeometry](https://st.suckless.org/patches/anygeometry/)
+      - allows st to start at any pixel size using the \-G command line option (if floating)
+      - can be combined with the anysize patch to resize to any pixel size
 
    - [anysize](https://st.suckless.org/patches/anysize/)
       - allows st to reize to any pixel size rather than snapping to character width / height
